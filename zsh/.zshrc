@@ -1,6 +1,9 @@
 # Prompt
 source ~/.config/zsh/catppuccin-mocha.zsh
 
+# Completions
+autoload -Uz compinit && compinit
+
 # Plugins
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -13,7 +16,12 @@ alias ....="cd ../../.."
 alias ll="ls -lah"
 alias la="ls -A"
 alias lt="ls -lth"
-alias npx="pnpx"
+alias npx="pnpm dlx"
 
-# Tools
+# mise
 eval "$(mise activate zsh)"
+
+# ngrok
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
