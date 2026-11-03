@@ -2,17 +2,15 @@
 uv = "latest"
 node = "24"
 python = "3.14"
-ruby = "4"
 go = "1.26"
-terraform = "1.14"
+terraform = "1.16"
 shellcheck = "latest"
 tree-sitter = "latest"
+pnpm = "12"
 
 [env]
 UV_PYTHON = { value = "{{ tools.python.path }}", tools = true }
 
 [settings]
-idiomatic_version_file_enable_tools = ["node", "ruby"]
-
-[settings.ruby]
-compile = false
+idiomatic_version_file_enable_tools = ["node", "pnpm", "terraform", "python"]
+python.uv_venv_auto = "source"
